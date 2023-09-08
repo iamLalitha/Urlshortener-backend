@@ -100,7 +100,7 @@ const transporter =nodemailer.createTransport({
         from: process.env.EMAIL_USER,
         to: email,
         subject: 'Account Activation',
-        text: `Click the following link to activate your account: http://localhost:3000/activate/${verificationToken}`,
+        text: `Click the following link to activate your account: https://gilded-heliotrope-6bfcfd.netlify.app/activate/${verificationToken}`,
     };
     await transporter.sendMail(emailContent);
 
@@ -184,7 +184,7 @@ app.post('/forgot-password', async (req, res) => {
         from: process.env.EMAIL_USER,
         to: email,
         subject: 'Password Reset Verification',
-        text: `Click the following link to verify your password reset:  http://localhost:3000/reset-password/${verificationToken}`,
+        text: `Click the following link to verify your password reset:  https://gilded-heliotrope-6bfcfd.netlify.app/reset-password/${verificationToken}`,
       };
      
       await transporter.sendMail(emailContent);
